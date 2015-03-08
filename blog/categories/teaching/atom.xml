@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Beth Makes]]></title>
-  <link href="http://Cynaria.github.io/atom.xml" rel="self"/>
+  <title><![CDATA[Category: Teaching | Beth Makes]]></title>
+  <link href="http://Cynaria.github.io/blog/categories/teaching/atom.xml" rel="self"/>
   <link href="http://Cynaria.github.io/"/>
   <updated>2015-03-08T09:35:12-05:00</updated>
   <id>http://Cynaria.github.io/</id>
@@ -19,16 +19,6 @@
     <updated>2015-03-08T09:32:20-05:00</updated>
     <id>http://Cynaria.github.io/blog/2015/03/08/teaching-raj-about-octopress</id>
     <content type="html"><![CDATA[<p>Super professional teaching going on here and I can&rsquo;t type today.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[One Day Blogging Will Hapoen]]></title>
-    <link href="http://Cynaria.github.io/blog/2014/07/23/why-anyone-who-can-knit-can-code/"/>
-    <updated>2014-07-23T22:52:24-05:00</updated>
-    <id>http://Cynaria.github.io/blog/2014/07/23/why-anyone-who-can-knit-can-code</id>
-    <content type="html"><![CDATA[<p>If you have come across this post then congratulations!<br/>
-Perhaps one day I will share my yummy recipes for delicious baked goods, knitting tips and coding discoveries but, today is not that day! Check back later!</p>
 ]]></content>
   </entry>
   

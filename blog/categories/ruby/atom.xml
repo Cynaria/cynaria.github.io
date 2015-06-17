@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Ruby, | Beth Makes]]></title>
+  <link href="http://Cynaria.github.io/blog/categories/ruby/atom.xml" rel="self"/>
+  <link href="http://Cynaria.github.io/"/>
+  <updated>2015-06-17T11:21:35-05:00</updated>
+  <id>http://Cynaria.github.io/</id>
+  <author>
+    <name><![CDATA[Elizabeth Cruz]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Design Patterns]]></title>
+    <link href="http://Cynaria.github.io/blog/2015/06/15/design-patterns/"/>
+    <updated>2015-06-15T08:21:59-05:00</updated>
+    <id>http://Cynaria.github.io/blog/2015/06/15/design-patterns</id>
+    <content type="html"><![CDATA[<p>Hey all,</p>
+
+<p>I feel like I&rsquo;ve been sitting at a road block in my programming knowlegde. I&rsquo;ve decided to take some time out of each day to sit down, learn a new design pattern and how it&rsquo;s applied and whip up an example.</p>
+
+<h2>Main Points of Design Patterns</h2>
+
+<!-- more -->
+
+
+<ol>
+<li>Seperate out volatile code
+
+<ul>
+<li>Promotes DRY code</li>
+<li>Improves maintainability</li>
+</ul>
+</li>
+<li>Program to an interface not an implementation: Code should belong to the most generic class possible. Specific classes should inherit from more general classes.
+
+<ul>
+<li>Increases modularity</li>
+</ul>
+</li>
+<li>Prefer composition over inheritance: Instead of saying an object is a kind of something, say an object has something. It is better to reference a class than to put functionality in a superclass
+
+<ul>
+<li>increases modularity</li>
+<li>increases encapsulation</li>
+</ul>
+</li>
+<li>Delegate! Let other classes handle functionality within their domain.</li>
+<li>Don&rsquo;t implement features or designs if you don&rsquo;t need them. As Sandi Metz would say. Don&rsquo;t try to predict the future. Code so that you can adapt to the future.</li>
+</ol>
+
+
+<p>Let&rsquo;s start! (whoooo)</p>
+
+<h2>Template Pattern</h2>
+
+<p>Templating helps keep messy if statements out of your code by seperating them out into more specific classes. Take this super simplified example of yarn (Come on I&rsquo;m a knitter what were you expecting).</p>
+
+<p>Here I&rsquo;m using if statements to determine the output based on the weight of the yarn (For you non-knitters weight is the thickness of the yarn). It would be better if I seperated the if statement into their own seperate classes that inherit from the Yarn class. Taking this:</p>
+
+<p>```
+class Yarn</p>
+
+<pre><code>attr_reader :weight
+def initialize(weight)
+    @weight = weight
+end
+
+def say_weight
+    if weight == "worsted"
+        "I am worsted weight!"
+    elsif weight == "fingering"
+        "I am fingering weight!"
+    end
+end
+</code></pre>
+
+<p>end
+```
+to</p>
+
+<p>```
+class Yarn</p>
+
+<pre><code>class Base
+    def say_weight
+        "I am #{weight} weight!"
+    end
+
+    private
+    def weight
+        raise NotImplementedError
+    end
+end
+
+class Worsted &lt; Base
+    private
+    def weight
+        "worsted"
+    end
+end
+
+class Fingering &lt; Base
+    private
+    def weight
+        "fingering"
+    end
+end
+</code></pre>
+
+<p>end
+```</p>
+
+<p>But Beth! There&rsquo;s more code now!</p>
+
+<p>Yeah, there is. But it&rsquo;s much easier to add new things now. Say we wanted to add a standard gauge. If it was still held in the yarn class we would have to make another if/else statement. Pretty much every time you handeled worsted weight yarn differently than fingering weight yarn, you would need another if/else statement. Using the Templating pattern helps to seperate those out and keep the code more modular.</p>
+
+<p>Anyway! That&rsquo;s all my time for now. Now I have to go work on&hellip;</p>
+
+<p><img src="./../../../../../images/fox_paws.jpg" alt="image" /></p>
+]]></content>
+  </entry>
+  
+</feed>

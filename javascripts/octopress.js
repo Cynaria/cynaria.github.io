@@ -30,8 +30,8 @@ function getNav() {
 //       $(section).addClass(count);
 //     });
 //   }
-  if (sections.length >= 3){ $('aside.sidebar').addClass('thirds'); }
-}
+//   if (sections.length >= 3){ $('aside.sidebar').addClass('thirds'); }
+// }
 
 function testFeatures() {
   var features = ['maskImage'];
